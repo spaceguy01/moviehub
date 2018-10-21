@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>Update - Movie Hub</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="container editmovie">
+    <h4 style="...">Update this movie</h4>
+
+    <br><br>
+    {{ form.hidden_tag() }}
+    {{ wtf.quick_form(form) }}
+
+  </div>
+
+{% endblock %}

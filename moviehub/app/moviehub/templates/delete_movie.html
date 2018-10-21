@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <h4 class="my-5" style="margin-left: 45px">Delete the movie? </h4>
+    <hr>
+
+
+        <div class="col-md-4 mt-5 mx-auto entry"><br><br>
+          <img src="/static/img/{{ movie.image }}" alt="movie-image" height="200" class="img-rounded">
+          <br><br>
+          <h4 class="movietitle">{{ movie.title }}</h4><br>
+          Movie Id : {{ movie.id }}<br><br>
+          Director : {{ movie.director }}<br><br>
+          Rating : {{ movie.rating }}<br><br>
+          Runtime : {{ movie.runtime }} minutes<br><br>
+          Cast : {{ movie.cast }}<br><br>
+          Genre : {{ movie.genre }}<br><br>
+          Year : {{ movie.year }}<br><br>
+      <form action="" class="mt-2 mb-5" method="POST">
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+      </form>
+    </div>
+{% endblock %}

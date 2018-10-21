@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>404 Error - Movie Hub</title>
+{% endblock %}
+
+{% block content %}
+  <br>
+  <div class="container" style="...">
+    <h4>Sorry, the page you are looking for could not be found....</h4><br>
+    <button class="label label-primary"><a href="{{ url_for('main.display_movies') }}" style="...">Back to Home</a></button>
+  </div>
+{% endblock %}

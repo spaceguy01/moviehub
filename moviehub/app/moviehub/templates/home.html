@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container movies">
+  <h2 class="homebanner my-5">Welcome to Movie Hub : Home for the Best Movies this year!</h2>
+  <h4>Below you will find the list of recommended movies to watch!</h4><br>
+
+  <div class="row">
+    {% for movie in movies %}
+    <div class="col-md-4 entry"><br><br>
+      <img src="static/img/{{ movie.image }}" alt="movie-image" height="200" class="img-rounded">
+      <br><br>
+      <h4 class="movietitle">Title : {{ movie.title }}</h4><br>
+      <p>Director : {{ movie.director }}</p>
+      <p>Rating : {{ movie.rating }}</p>
+      <p>Runtime : {{ movie.runtime }} minutes</p>
+      <p>Cast : {{ movie.cast }}</p>
+      <p>Genre : {{ movie.genre }}</p>
+      <p>Year : {{ movie.year }}</p>
+      <p>Storyline : {{ movie.storyline }}</p>
+      <p><a href="{{ url_for('main.display_studio', studio_id = movie.stud_id) }}">
+        Studio Id : {{ movie.stud_id }}</a></p>
+      <span class="badge badge-success"><a href="{{ url_for('main.create_movie', stud_id = movie.stud_id)}}" style="color:floralwhite">Create</a></span>
+      <span class="badge badge-warning"><a href="{{ url_for('main.edit_movie', movie_id=movie.id)}}" style="color:floralwhite">Edit</a></span>
+      <span class="badge badge-danger"><a href="{{ url_for('main.delete_movie', movie_id=movie.id)}}" style="color:floralwhite">Delete</a></span>
+      <br><br>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

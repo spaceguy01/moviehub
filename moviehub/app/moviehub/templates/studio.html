@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+  {% block content %}<br><br>
+    <div class="container studio">
+    <h4>Movies by {{ studio.name }}</h4>
+    <hr>
+    <ol>
+      <br>
+      {% for movie in studio_movies %}
+      <li type="1">
+        <h4>{{ movie.title }} by {{ movie.director }}</h4>
+      <br>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+
+{% endblock %}

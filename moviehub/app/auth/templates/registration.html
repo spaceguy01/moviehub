@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>Registration - Movie Hub</title>
+{% endblock title %}
+
+{% block content %}<br><br>
+<div class="container form">
+<h4 class="form">Register Here</h4>
+
+  <hr>
+  <br>
+
+  {{ form.hidden_tag() }}
+  {{ wtf.quick_form(form) }}
+
+</div>
+{% endblock %}
